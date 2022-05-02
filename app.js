@@ -26,7 +26,7 @@ const classesRouter = require('./routes/classes');
 (async () => {
   try {
     const conection = await mongoose.connect(`${process.env.MONGODB_URI}`, { useNewUrlParser: true });
-    console.log(`Connected to Mongo! Database name: "${conection.connections[0].db.s.databaseName}"`);
+    console.log(`Connected to Mongo! Database name: "${conection.connections[0].name}"`);
   } catch (err) {
     console.error('Error conecting to Mongo database.', err);
   }
